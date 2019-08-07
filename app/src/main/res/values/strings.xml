@@ -4,5 +4,9 @@
     <string name="title_hint">Deal title</string>
     <string name="price_hint">Price (numbers only)</string>
     <string name="description_hint">Description</string>
-    <string name="save_menu">save</string>
+    <string name="save_menu">SAVE</string>
+    <string name="delete_deal">Delete deal</string>
+    <string name="logout_menu_text">Logout</string>
+    <string name="new_travel_deal_text">New Travel Deal</string>
+    <string name="select_image_text">Select image</string>
 </resources>
