@@ -2,6 +2,7 @@ package com.xpacer.travelmantics;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.xpacer.travelmantics.models.TravelDeal;
+import com.xpacer.travelmantics.utils.FirebaseUtil;
 
 public class InsertActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
@@ -27,8 +29,8 @@ public class InsertActivity extends AppCompatActivity {
         etPrice = findViewById(R.id.etPrice);
         etDescription = findViewById(R.id.etDescription);
 
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseDatabase.getReference().child("traveldeals");
+        mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
+        mDatabaseReference = FirebaseUtil.mDatabaseReference;
     }
 
     @Override
@@ -41,7 +43,7 @@ public class InsertActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.menu.save_menu:
+            case R.id.save_menu:
                 saveDeal();
                 clean();
                 return true;
